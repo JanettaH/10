@@ -34,12 +34,24 @@
             android:onClick="refresh"
             android:text="Refresh" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="shoutout"
+            android:text="shoutout" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="initialize"
+            android:text="initialize" />
+
         <WebView
             android:id="@+id/webView"
             android:layout_width="match_parent"
-            android:layout_height="1550px"
-
-
+            android:layout_height="1300px"
             >
 
         </WebView>

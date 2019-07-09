@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     WebView browser;
     EditText text;
-    Button button;
-    Button button2;
+
+
 
 
     @Override
@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
         browser = findViewById(R.id.webView);
         browser.setWebViewClient(new WebViewClient());
         browser.getSettings().setJavaScriptEnabled(true);
-        button = findViewById(R.id.button);
-        button2 = findViewById(R.id.button2);
+
 
     }
 
@@ -34,11 +33,28 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://" + text.getText().toString();
         browser.loadUrl(url);
 
+        if ( url.equals("http://index.html") ) {
+            browser.loadUrl("file:///android_asset/index.html");
+        }
+        else {
+            browser.loadUrl(url);
+        }
     }
 
     public void refresh(View v) {
         String url = "http://" + text.getText().toString();
         browser.loadUrl(url);
-
     }
+
+    public void shoutout(View v) {
+        browser.evaluateJavascript("javascript:shoutOut()", null);
+    }
+
+    public void initialize(View v) {
+        browser.evaluateJavascript("javascript:initialize()", null);
+    }
+
+
+
+
 }
